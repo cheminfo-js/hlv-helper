@@ -50,7 +50,7 @@ describe('test createChart', () => {
     let options = [];
     let chart = createChart(x, y, type, options);
     let unselected = chart.data[0].styles.unselected;
-    expect(unselected.map((e) => e.fill)).toEqual([
+    expect(unselected.map((e) => e.fill)).toStrictEqual([
       'rgba(118,166,124,1)',
       'rgba(118,166,124,1)'
     ]);
@@ -64,7 +64,7 @@ describe('test createChart', () => {
     options.color = ['rgba(118,166,124,0)', 'rgba(118,166,123,0)'];
     let chart = createChart(x, y, type, options);
     let unselected = chart.data[0].styles.unselected;
-    expect(unselected.map((e) => e.fill)).toEqual([
+    expect(unselected.map((e) => e.fill)).toStrictEqual([
       'rgba(118,166,124,0)',
       'rgba(118,166,123,0)'
     ]);

@@ -111,6 +111,10 @@ const createChart = __webpack_require__(1);
 
 const colorCoding = __webpack_require__(2);
 
+const sequenceAlongArray = __webpack_require__(3);
+
+const transposeArray2d = __webpack_require__(4);
+
 function five() {
   return 5;
 }
@@ -118,7 +122,9 @@ function five() {
 module.exports = {
   five,
   createChart,
-  colorCoding
+  colorCoding,
+  sequenceAlongArray,
+  transposeArray2d
 };
 
 /***/ }),
@@ -256,6 +262,43 @@ function colorCoding(vector, colorScale) {
 }
 
 module.exports = colorCoding;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/**
+ * Create a sequence of length of x Array
+ * @param {Array} x an array
+ * @return {Array} an sequence of same length than x
+ */
+
+function sequenceAlongArray(x) {
+  let res = x.map((x, i) => i + 1);
+  return res;
+}
+
+module.exports = sequenceAlongArray;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/**
+ * Project the dataset into the PCA space
+ * @param {Array} array a 2d array to transpose
+ * @return {Object} a tranposed array
+ */
+
+function transposeArray2d(array) {
+  return array[0].map((col, i) => array.map(row => row[i]));
+}
+
+module.exports = transposeArray2d;
 
 /***/ })
 /******/ ]);

@@ -106,13 +106,15 @@ function createChart(x, y, type, options) {
       break;
     case 'color':
       chart = {
-        data: [{
+        data: [
+{
           label: options.title,
           type: 'color',
           x: x,
           y: y,
           color: options.color
-        }]
+        }
+]
       };
       break;
     default:
