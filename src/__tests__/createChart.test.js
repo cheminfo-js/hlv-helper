@@ -9,7 +9,7 @@ describe('test createChart', () => {
     let type = 'scatter';
     let options = [];
     let chart = createChart(x, y, type, options);
-    expect(chart.title).toBe('score plot');
+    expect(chart.title).toBe('my plot');
   });
   it('test chart x length', () => {
     let x = [1, 2];
@@ -52,7 +52,7 @@ describe('test createChart', () => {
     let unselected = chart.data[0].styles.unselected;
     expect(unselected.map((e) => e.fill)).toStrictEqual([
       'rgba(118,166,124,1)',
-      'rgba(118,166,124,1)'
+      'rgba(118,166,124,1)',
     ]);
   });
 
@@ -66,7 +66,7 @@ describe('test createChart', () => {
     let unselected = chart.data[0].styles.unselected;
     expect(unselected.map((e) => e.fill)).toStrictEqual([
       'rgba(118,166,124,0)',
-      'rgba(118,166,123,0)'
+      'rgba(118,166,123,0)',
     ]);
   });
 });

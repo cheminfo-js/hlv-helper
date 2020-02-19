@@ -8,7 +8,7 @@ const defaultOptions = {
     shape: 'circle',
     stroke: 'transparent',
     width: '5px',
-    height: '5px'
+    height: '5px',
   },
   selected: {
     cx: 0,
@@ -17,9 +17,9 @@ const defaultOptions = {
     shape: 'circle',
     stroke: 'transparent',
     width: '5px',
-    height: '5px'
+    height: '5px',
   },
-  title: 'score plot'
+  title: 'my plot',
 };
 
 /**
@@ -53,8 +53,8 @@ function createChart(x, y, type, options) {
   x.forEach((v, i) =>
     options.info.push({
       id: options.id[i],
-      _highlight: options.highlight[i]
-    })
+      _highlight: options.highlight[i],
+    }),
   );
 
   let unselected = [];
@@ -67,8 +67,8 @@ function createChart(x, y, type, options) {
       shape: options.unselected.shape,
       stroke: options.unselected.stroke,
       width: options.unselected.width,
-      height: options.unselected.height
-    })
+      height: options.unselected.height,
+    }),
   );
 
   let selected = [];
@@ -81,8 +81,8 @@ function createChart(x, y, type, options) {
       shape: options.selected.shape,
       stroke: options.selected.stroke,
       width: options.selected.width,
-      height: options.selected.height
-    })
+      height: options.selected.height,
+    }),
   );
 
   let chart;
@@ -95,27 +95,33 @@ function createChart(x, y, type, options) {
             type: 'scatter',
             styles: {
               unselected: unselected,
-              selected: selected
+              selected: selected,
             },
             x: x,
             y: y,
-            info: options.info
-          }
-        ]
+            info: options.info,
+          },
+        ],
       };
       break;
     case 'color':
       chart = {
         data: [
-{
-          label: options.title,
-          type: 'color',
-          x: x,
-          y: y,
-          color: options.color
-        }
-]
+          {
+            label: options.title,
+            type: 'color',
+            x: x,
+            y: y,
+            color: options.color,
+          },
+        ],
       };
+      break;
+    case 'bar':
+      if (x.length === 0) {
+        x = y.map((e, i) => i + 1);
+      }
+      chart = { x, y };
       break;
     default:
       break;

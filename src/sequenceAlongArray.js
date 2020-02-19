@@ -7,8 +7,7 @@
  */
 
 function sequenceAlongArray(x) {
-  let res = x.map((x, i) => i + 1);
-  return res;
+  return x.map((e, i) => i + 1);
 }
 
 module.exports = sequenceAlongArray;

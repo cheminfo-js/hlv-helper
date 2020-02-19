@@ -2,17 +2,14 @@
 
 const createChart = require('./createChart');
 const colorCoding = require('./colorCoding');
+const colorScale = require('./colorScale');
 const sequenceAlongArray = require('./sequenceAlongArray');
 const transposeArray2d = require('./transposeArray2d.js');
 
-function five() {
-  return 5;
-}
-
 module.exports = {
-  five,
   createChart,
   colorCoding,
+  colorScale,
   sequenceAlongArray,
-  transposeArray2d
+  transposeArray2d,
 };
