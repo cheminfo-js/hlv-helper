@@ -31,7 +31,7 @@ describe('test colorScale', () => {
 });
 
 describe('colorscale input test', () => {
-  it('wrong method', function() {
+  it('wrong method', function () {
     expect(() =>
       colorScale(['1', '2', '3'], { color: ['red', 'blue'] }),
     ).toThrow('colorScale only accepts arrays of number or a range');

@@ -16,11 +16,11 @@ function colorScale(vector, options) {
   }
 
   options = Object.assign({}, defaultOptions, options);
-  let max = vector.reduce(function(a, b) {
+  let max = vector.reduce(function (a, b) {
     return Math.max(a, b);
   });
 
-  let min = vector.reduce(function(a, b) {
+  let min = vector.reduce(function (a, b) {
     return Math.min(a, b);
   });
 
